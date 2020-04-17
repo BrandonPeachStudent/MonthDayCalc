@@ -60,6 +60,20 @@ public class Main {
         }
 
     }
+
+    public static void ZellerCongruence(int month, int year, int dayOfMonth) {
+        if (month == 1 || month == 2) {
+            month = (month + 12);
+            year--;
+        }
+
+        int yearZero = (year / 100);
+        int zellerCongruenceEquation = 13 * (month + 1);
+        int yearCentury = (year % 100);
+        int dayOfWeek = ((dayOfMonth + (zellerCongruenceEquation/5)+ yearCentury +(yearCentury/4)+(yearZero/4)+(5*(yearZero)))%7);
+        return dayOfWeek;
+    }
+    
 }
 
 

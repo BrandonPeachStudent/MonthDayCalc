@@ -61,7 +61,7 @@ public class Main {
 
     }
 
-    public static void ZellerCongruence(int month, int year, int dayOfMonth) {
+    public static int ZellerCongruence(int month, int year, int dayOfMonth) {
         if (month == 1 || month == 2) {
             month = (month + 12);
             year--;
@@ -73,7 +73,26 @@ public class Main {
         int dayOfWeek = ((dayOfMonth + (zellerCongruenceEquation/5)+ yearCentury +(yearCentury/4)+(yearZero/4)+(5*(yearZero)))%7);
         return dayOfWeek;
     }
-    
+
+    public static String PoemLines(int dayOfWeek) {
+        switch (dayOfWeek) {
+            case 2:
+                return ("You were born on a Monday. Based on the poem you are fair of face.");
+            case 3:
+                return ("You were born on a Tuesday. According to the poem, you are full of grace.");
+            case 4:
+                return ("You were born on a Wednesday. Therefore you are full of woe.");
+            case 5:
+                return ("You were born on a Thursday. Based on the poem, you have far to go.");
+            case 6:
+                return ("You were born on a Friday. The poem says you are loving and giving.");
+            case 0:
+                return ("You were born on a Saturday. According to the poem, you work hard for a living.");
+            default:
+                return ("You were born on the Sabbath Day. Therefore you are fair and wise in every way");
+
+        }
+    }
 }
 
 
